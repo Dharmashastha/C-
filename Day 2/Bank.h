@@ -13,7 +13,7 @@ protected:           //Attributes BankName,EstablisedDate,BankType,BranchName
 
     string bankName;
     string establisedDate;
-    string bankType;
+    BankType bankType;
     string branchName;
 
 public:
@@ -35,7 +35,7 @@ public:
         this -> establisedDate = establisedDate;
     }
 
-    void setBankType(string bankType)
+    void setBankType(BankType bankType)
     {
         this -> bankType = bankType;
     }
@@ -49,7 +49,7 @@ public:
 
     virtual string getBankName(){return "";};
     virtual string getEstablisedDate(){return "";};
-    virtual string getBankType(){return "";};
+    virtual BankType getBankType(){return ;};
     virtual string getBranchName(){return "";};
     virtual string getInfo(){return "";};           //Print of Bank Details
 

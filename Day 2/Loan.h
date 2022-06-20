@@ -11,7 +11,7 @@ class Loan
 {
 protected:           //Attributes LoanType,InterestRate,Document
 
-    string loanType;
+    LoanType loanType;
     float interestRate;
     string document;
 
@@ -25,7 +25,7 @@ public:
 
     //setter method
 
-    void setLoanType(string loanType)
+    void setLoanType(LoanType loanType)
     {
         this -> loanType = loanType;
     }
@@ -42,7 +42,7 @@ public:
 
     //Overriding method from Derived Class
 
-    virtual string getLoanType(){return "";};
+    virtual LoanType getLoanType(){return ;};
     virtual float getInterestRate(){return 0;};
     virtual string getDoument(){return "";};
 };

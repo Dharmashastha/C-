@@ -33,7 +33,7 @@ public:
         return Bank::establisedDate;
     }
 
-    string getBankType()
+    BankType getBankType()
     {
         return Bank::bankType;
     }
@@ -43,7 +43,7 @@ public:
         return Bank::branchName;
     }
 
-    string getLoanType()
+    LoanType getLoanType()
     {
         return Loan::loanType;         // Multiple Inheritance using Scope Resolution Loan Base Class
     }
@@ -62,8 +62,8 @@ public:
 
     string getInfo()
     {
-         return "BankName : " + getBankName() + "\nEstablisedDate : " + getEstablisedDate() + "\nBankType : " + getBankType() + "\nBranchName : " 
-         + getBranchName() + "\nLoanType : " + getLoanType() + "\nInterestRate : " + to_string(getInterestRate()) + "\nDoument : " + getDoument();
+         return "BankName : " + getBankName() + "\nEstablisedDate : " + getEstablisedDate() + "\nBankType : " + to_string(getBankType()) + "\nBranchName : " 
+         + getBranchName() + "\nLoanType : " + to_string(getLoanType()) + "\nInterestRate : " + to_string(getInterestRate()) + "\nDoument : " + getDoument();
     }
 
 };

@@ -13,24 +13,34 @@
 
 using namespace std;
 
+enum BankType
+{
+    Public,Private
+};
+
+enum LoanType
+{
+    GoldLoan,LandLoan,PersonalLoan
+};
+
 class Controller
 {
     InputCenter inputCall;
 
 private:
-    string bankType(int number)
+    BankType bankType(int number)
     {
-        string dummyString = "";
+        BankType saved;
         switch (number)
         {
         case 1:
         {
-            dummyString = "Public";
+            saved = Public;
             break;
         }    
         case 2:
         {
-            dummyString = "Private";
+            saved = Private;
             break;
         }    
         
@@ -38,28 +48,28 @@ private:
             throw("Please Enter Valid Number");
             break;
         }
-        return dummyString;
+        return saved;
     } 
 
-    string loanType(int number)
+    LoanType loanType(int number)
     {
-        string dummyString = "";
+        LoanType saved;
         switch (number)
         {
         case 1:
         {
-            dummyString = "GoldLoan";
+            saved = GoldLoan;
             break;
         }    
         case 2:
         {
-            dummyString = "LandLoan";
+            saved = LandLoan;
             break;
         }    
         
         case 3:
         {
-            dummyString = "PersonalLoan";
+            saved = PersonalLoan;
             break;
         }
 
@@ -67,7 +77,7 @@ private:
             throw("Please Enter Valid Number");
             break;
         }
-        return dummyString;
+        return saved;
     }
 
 
