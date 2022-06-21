@@ -45,8 +45,7 @@ int main()
     cout << "\nRectangle Area Value is\n" + to_string(recCall5.findArea());
     cout << "\nRectangle Values\n" + recCall5.print();
 
-    int area = 30;
-    Rectangle recCall6(recCall2,area);
+    Rectangle recCall6(recCall2);
     cout << "\nRectangle Area Value is\n" + to_string(recCall6.findArea());
     cout << "\nRectangle Values\n" + recCall6.print();
 

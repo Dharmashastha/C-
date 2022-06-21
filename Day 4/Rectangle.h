@@ -24,62 +24,69 @@ private:
 public:
     Rectangle()            //Default constuctor
     {
-        int dummy = 0;
-        left = &dummy;
-        top = &dummy;
-        width = &dummy;
-        height = &dummy;
+        left = (int*) malloc(1 * sizeof(int));
+        if(left == NULL)
+        {
+            throw("Memory allocation failed.\n");
+        }
+        *left = 0;
+        top = (int*) malloc(1 * sizeof(int));
+        *top = 0;
+        width = (int*) malloc(1 * sizeof(int));
+        *width = 0;
+        height = (int*) malloc(1 * sizeof(int));
+        *height = 0;
     }
 
     Rectangle(Rectangle &recCall)   //Copy constuctor
     {
-        this->width = recCall.width;
-        this->height = recCall.height;
-        this->left = recCall.left;
-        this->top = recCall.top;
+        width = (int*) malloc(1 * sizeof(int));
+        *width = 24;
+        height = (int*) malloc(1 * sizeof(int));
+        *height = 28;
+        left = (int*) malloc(1 * sizeof(int));
+        *left = 12;
+        top = (int*) malloc(1 * sizeof(int));
+        *top = 20;
+        area = (int*) malloc(1 * sizeof(int));
+        *area = findArea();
     }
 
-    Rectangle(Rectangle &recCall, int area) //parameter copy object,int data variable
+    Rectangle(int width1, int height1, int left1, int top1)     //parameter full datatype int 
     {
-        this->width = recCall.width;
-        this->height = recCall.height;
-        this->left = recCall.left;
-        this->top = recCall.top;
-        this->area = &area;
-    }
-
-    Rectangle(int &width, int &height, int &left, int &top)     //parameter full datatype int 
-    {
-        this->width = &width;
-        this->height = &height;
-        this->left = &left;
-        this->top = &top;
+        width = (int*) malloc(1 * sizeof(int));
+        *width = width1;
+        height = (int*) malloc(1 * sizeof(int));
+        *height = height1;
+        left = (int*) malloc(1 * sizeof(int));
+        *left = left1;
+        top = (int*) malloc(1 * sizeof(int));
+        *top = top1;
     }
 
     ~Rectangle()
     {
-        left = NULL;
-        top = NULL;
-        width = NULL;
-        height = NULL;
-        area = NULL;
         delete left;
         delete top;
         delete width;
         delete height;
-        delete area;
+      //  delete area;
     }
 
-    Rectangle(float &width, float &height, float &left, float &top)     //parameter full datatype float
+    Rectangle(float width1, float height1, float left1, float top1)     //parameter full datatype float
     {
-        savedWidth = (int)round(width);
-        savedHeight = (int)round(height);
-        savedLeft = (int)round(left);
-        savedTop = (int)round(top);
-        this->width = &savedWidth;
-        this->height = &savedHeight;
-        this->left = &savedLeft;
-        this->top = &savedTop;
+        savedWidth = (int)round(width1);
+        savedHeight = (int)round(height1);
+        savedLeft = (int)round(left1);
+        savedTop = (int)round(top1);
+        width = (int*) malloc(1 * sizeof(int));
+        *width = savedWidth;
+        height = (int*) malloc(1 * sizeof(int));
+        *height = savedHeight;
+        left = (int*) malloc(1 * sizeof(int));
+        *left = savedLeft;
+        top = (int*) malloc(1 * sizeof(int));
+        *top = savedTop;
     }
 
     int findArea()                                                  //Find Area
